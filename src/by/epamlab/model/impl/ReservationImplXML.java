@@ -1,7 +1,7 @@
 package by.epamlab.model.impl;
 
 import by.epamlab.constants.Constants;
-import by.epamlab.controllers.Security;
+import by.epamlab.utilits.Security;
 import by.epamlab.ifaces.IReservationDAO;
 import by.epamlab.ifaces.IUserDAO;
 import by.epamlab.model.beans.reservation.ObjectElement;
