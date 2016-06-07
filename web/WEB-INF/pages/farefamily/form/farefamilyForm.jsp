@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tld/reservation.tld" prefix="rtag"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>Customer</title>
@@ -11,5 +13,35 @@
 </head>
 <body>
     <rtag:reservationTags element="FareFamily">FareFamilyCode;AncillaryAirComponent(AncillaryAirComponentCode);</rtag:reservationTags>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>
+                ${FareFamily.nameElement}
+            </h1>
+            <p>
+                <c:forEach items="${FareFamily.attributes}" var="entry">
+            <div>
+                    ${entry.key} = ${entry.value}
+            </div>
+            </c:forEach>
+            </p>
+        </div>
+        <dl>
+            <c:forEach items="${FareFamily.content}" var="content">
+                <c:forEach items="${content.value}" var="entry">
+                    <dt>
+                            ${entry.nameElement}
+                    </dt>
+                    <dd>
+                        <c:forEach items="${entry.attributes}" var="attr">
+                            <div>
+                                    ${attr.key} = ${attr.value}
+                            </div>
+                        </c:forEach>
+                    </dd>
+                </c:forEach>
+            </c:forEach>
+        </dl>
+    </div>
 </body>
 </html>

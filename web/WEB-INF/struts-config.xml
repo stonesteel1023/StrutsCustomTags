@@ -11,7 +11,7 @@
         </form-beans>
         <action-mappings>
                 <action name="loginForm" path="/login" type="by.epamlab.struts.action.LoginAction" scope="request" input="/index.do">
-                        <forward name="failure" path="/index.do" redirect="true"/>
+                        <forward name="failure" path="/index.do" redirect="false"/>
                         <forward name="success" path="/reservation.do" redirect="true"/>
                 </action>
 

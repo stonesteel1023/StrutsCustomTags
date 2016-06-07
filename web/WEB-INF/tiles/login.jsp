@@ -48,7 +48,7 @@
                 <div class="form-group" style="margin: 0; padding: 0 5px;" >
                         <html:text property="userName" styleId="userName" styleClass="form-control input-sm" style="height: 25px;"/>
                 </div>
-                <div class="form-group" style="margin: 0; padding: 0 5px;" >
+                <div class="form-group" style="margin: 0; padding: 0 5px; color:red">
                     <html:errors property="userName" />
                 </div>
                 <div class="form-group" style="margin: 0; padding: 0 5px;" >
@@ -57,7 +57,7 @@
                 <div class="form-group" style="margin: 0; padding: 0 5px;" >
                         <html:password property="password" styleId="password" styleClass="form-control input-sm" style="height: 25px;"/>
                 </div>
-                <div class="form-group" style="margin: 0; padding: 0 5px;" >
+                <div class="form-group" style="margin: 0; padding: 0 5px; color:red">
                     <html:errors property="password" />
                 </div>
                 <div class="form-group" style="margin: 0; padding: 0 5px;" >
@@ -65,7 +65,7 @@
                         <bean:message key="login.login"/>
                     </html:submit>
                 </div>
-                <div class="form-group" style="margin: 0; padding: 0 5px;" >
+                <div class="form-group" style="margin: 0; padding: 0 5px; color:red">
                     <html:errors property="nouser" />
                 </div>
                 <div class="form-group" style="margin: 0; padding: 0 5px; float: right;">

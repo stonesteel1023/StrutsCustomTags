@@ -24,23 +24,23 @@
       							<label for="login"><bean:message key="registration.userNameReg"/></label>
       							<html:text property="userNameReg" styleClass="form-control" styleId="login"/>
     						</div>
-							<div class="form-group" style="margin: 0; padding: 0 5px;" >
+							<div class="form-group" style="margin: 0; padding: 0 5px; color:red" >
 								<html:errors property="userNameReg" />
 							</div>
     						<div class="form-group">
       							<label for="passwordReg"><bean:message key="registration.passwordReg"/></label>
       							<html:password property="passwordReg" styleClass="form-control" styleId="passwordReg"/>
-								<div class="form-group" style="margin: 0; padding: 0 5px;" >
+								<div class="form-group" style="margin: 0; padding: 0 5px; color:red">
 									<html:errors property="passwordReg" />
 								</div>
       							<label for="repeatPasswordReg"><bean:message key="registration.repeatPasswordReg"/></label>
       							<html:password property="repeatPasswordReg" styleClass="form-control" styleId="repeatPasswordReg"/>
-								<div class="form-group" style="margin: 0; padding: 0 5px;" >
+								<div class="form-group" style="margin: 0; padding: 0 5px; color:red">
 									<html:errors property="repeatPasswordReg" />
 								</div>
     						</div>
     						<html:submit styleClass="btn btn-default"><bean:message key="registration.register"/></html:submit>
-							<div class="form-group" style="margin: 0; padding: 0 5px;" >
+							<div class="form-group" style="margin: 0; padding: 0 5px; color:red">
 								<html:errors property="passwordsMachReg" />
 							</div>
   						</html:form>

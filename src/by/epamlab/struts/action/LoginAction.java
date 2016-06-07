@@ -38,7 +38,7 @@ public class LoginAction extends Action {
 
         target = "failure";
         ActionErrors actionErrors = new ActionErrors();
-        actionErrors.add(Globals.ERROR_KEY, new ActionMessage("error.nouser.null", "nouser"));
+        actionErrors.add("nouser", new ActionMessage("error.nouser.null"));
         saveErrors(request, actionErrors);
         return mapping.findForward(target);
     }

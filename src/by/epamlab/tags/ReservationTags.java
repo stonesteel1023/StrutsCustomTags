@@ -5,9 +5,11 @@ import by.epamlab.model.beans.reservation.ObjectElement;
 import by.epamlab.model.exceptions.DaoException;
 import by.epamlab.model.factories.ReservationFactory;
 
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TryCatchFinally;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,29 +31,17 @@ public class ReservationTags extends BodyTagSupport implements TryCatchFinally {
         StringBuffer result = new StringBuffer();
         String params = bodyContent.getString();
         bodyContent.clearBody();
+        List<ObjectElement> objectElementList = new ArrayList<>();
 
         IReservationDAO reservationDAO = ReservationFactory.getImplFromFactory();
         try {
-            List<ObjectElement> objectElementList = reservationDAO.getElement(element, params);
-            result.append("<div class=\"container\">");
-            for(ObjectElement objectElement: objectElementList) {
-                printObject(result, objectElement);
-            }
-            result.append("</div>");
+            objectElementList = reservationDAO.getElement(element, params);
+
         }catch (DaoException e) {
             e.printStackTrace();
         }
 
-        try {
-            if (result.length() > 0) {
-                bodyContent.println(result.toString());
-            }
-            bodyContent.writeOut(bodyContent.getEnclosingWriter());
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        pageContext.setAttribute(element, objectElementList.get(0), PageContext.PAGE_SCOPE);
         return SKIP_BODY;
     }
 
